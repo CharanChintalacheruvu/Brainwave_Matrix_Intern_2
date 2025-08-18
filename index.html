@@ -211,5 +211,36 @@
             }
         });
     </script>
+    <!-- Firebase App -->
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+<!-- Firebase Storage -->
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js"></script>
+
+<script>
+  // Your Firebase Config (from project settings > General)
+  const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "bwmtask2865.firebaseapp.com",
+    projectId: "bwmtask2865",
+    storageBucket: "bwmtask2865.appspot.com",
+    messagingSenderId: "XXXX",
+    appId: "XXXX"
+  };
+
+  // Initialize Firebase
+  const app = firebase.initializeApp(firebaseConfig);
+  const storage = firebase.storage();
+</script>
+<img id="product-img" alt="Product">
+
+<script>
+  const storageRef = storage.ref("hoodie1.png");
+  storageRef.getDownloadURL()
+    .then(url => {
+      document.getElementById("product-img").src = url;
+    })
+    .catch(err => console.error("Error fetching image:", err));
+</script>
+
 </body>
 </html>
