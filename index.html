@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,4 +40,220 @@
 
   <script src="assets/js/script.js"></script>
 </body>
+=======
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>God Level E-commerce Store</title>
+    <!-- Tailwind CSS CDN for a professional, responsive design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .scroll-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scroll-container {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+    <!-- Main application container -->
+    <div id="app-container" class="min-h-screen flex flex-col">
+
+        <!-- Header -->
+        <header class="bg-white dark:bg-gray-800 shadow-md p-4 sticky top-0 z-50 transition-colors duration-300">
+            <div class="container mx-auto flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <button id="menu-button" class="lg:hidden text-2xl"><i class="fas fa-bars"></i></button>
+                    <h1 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">
+                        GodLevel Store
+                    </h1>
+                </div>
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="#" class="text-lg font-medium hover:text-teal-400 transition-colors duration-300">Home</a>
+                    <a href="#" class="text-lg font-medium hover:text-teal-400 transition-colors duration-300">Shop</a>
+                    <a href="#" class="text-lg font-medium hover:text-teal-400 transition-colors duration-300">About</a>
+                    <a href="#" class="text-lg font-medium hover:text-teal-400 transition-colors duration-300">Contact</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <button id="mode-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300">
+                        <i id="mode-icon" class="fas fa-moon text-lg"></i>
+                    </button>
+                    <button id="cart-button" class="relative p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300">
+                        <i class="fas fa-shopping-cart text-lg"></i>
+                        <span id="cart-count" class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full">0</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main content area -->
+        <main class="container mx-auto flex-1 p-4">
+            
+            <!-- Hero Section -->
+            <section class="text-center py-20 bg-gradient-to-r from-teal-500 to-blue-600 dark:from-teal-700 dark:to-blue-800 text-white rounded-2xl shadow-xl mb-12">
+                <h2 class="text-5xl md:text-6xl font-extrabold mb-4 animate-fadeInDown">Discover Our Latest Collections</h2>
+                <p class="text-xl md:text-2xl mb-8 animate-fadeInUp">Experience quality and style like never before.</p>
+                <button class="bg-white text-blue-600 dark:text-blue-900 px-8 py-4 rounded-full text-lg font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-300">
+                    Shop Now <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </section>
+
+            <!-- Product grid section -->
+            <section class="my-12">
+                <h2 class="text-4xl font-bold mb-8 text-center">Featured Products</h2>
+                <div id="product-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    <!-- Product cards will be dynamically loaded here by the local script -->
+                </div>
+            </section>
+
+            <!-- Admin section for adding products -->
+            <section class="my-12">
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 text-center">
+                    <h2 class="text-3xl font-bold mb-4">Admin Panel (Local Version)</h2>
+                    <p class="text-gray-500 dark:text-gray-400">
+                        This section is non-functional in the local version.
+                        The original version uses Firebase to save and retrieve product data.
+                    </p>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 dark:bg-gray-900 text-gray-300 p-8 text-center mt-auto">
+            <div class="container mx-auto">
+                <p>&copy; 2024 GodLevel Store. All rights reserved.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- JavaScript for local functionality -->
+    <script type="module">
+        // Dummy product data for the local version
+        const DUMMY_PRODUCTS = [{
+            name: "Vintage Leather Jacket",
+            description: "A classic leather jacket, handcrafted for durability and style. Perfect for any occasion.",
+            price: 199.99,
+            imageUrl: "https://placehold.co/600x400/1e293b/a5f3fc?text=Jacket"
+        }, {
+            name: "Essential Hoodie",
+            description: "Ultra-soft and comfortable hoodie for everyday wear. Available in multiple colors.",
+            price: 49.99,
+            imageUrl: "https://placehold.co/600x400/334155/67e8f9?text=Hoodie"
+        }, {
+            name: "Classic Denim Jeans",
+            description: "Timeless straight-fit jeans that go with everything. Made from high-quality denim.",
+            price: 79.99,
+            imageUrl: "https://placehold.co/600x400/1e293b/a5f3fc?text=Jeans"
+        }, {
+            name: "Canvas Sneakers",
+            description: "Lightweight and breathable sneakers, ideal for casual outings and long walks.",
+            price: 59.99,
+            imageUrl: "https://placehold.co/600x400/334155/67e8f9?text=Sneakers"
+        }, {
+            name: "Designer Watch",
+            description: "A sleek and elegant timepiece that adds a touch of sophistication to your look.",
+            price: 249.99,
+            imageUrl: "https://placehold.co/600x400/1e293b/a5f3fc?text=Watch"
+        }, {
+            name: "Knitted Beanie",
+            description: "Stay warm in style with this cozy knitted beanie. One size fits all.",
+            price: 24.99,
+            imageUrl: "https://placehold.co/600x400/334155/67e8f9?text=Beanie"
+        }, {
+            name: "Water Bottle",
+            description: "Stay hydrated with this stylish and durable water bottle. Perfect for the gym or outdoors.",
+            price: 19.99,
+            imageUrl: "https://placehold.co/600x400/1e293b/a5f3fc?text=Bottle"
+        }, {
+            name: "Backpack",
+            description: "A versatile and spacious backpack for all your daily adventures. Padded laptop compartment.",
+            price: 89.99,
+            imageUrl: "https://placehold.co/600x400/334155/67e8f9?text=Backpack"
+        }, ];
+
+        // UI elements
+        const productList = document.getElementById('product-list');
+        const cartCountSpan = document.getElementById('cart-count');
+        const modeToggle = document.getElementById('mode-toggle');
+        const modeIcon = document.getElementById('mode-icon');
+        const html = document.documentElement;
+
+        // Function to render a single product card
+        function renderProduct(product) {
+            const productCard = document.createElement('div');
+            productCard.className = 'bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden';
+            productCard.innerHTML = `
+                <img src="${product.imageUrl}" alt="${product.name}" class="w-full h-48 object-cover object-center">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2 truncate">${product.name}</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-3">${product.description}</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-bold text-teal-500">$${product.price.toFixed(2)}</span>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded-full font-bold text-sm shadow-md hover:bg-blue-600 transition-colors duration-300">
+                            <i class="fas fa-shopping-cart mr-2"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            `;
+            return productCard;
+        }
+
+        // Render all products from the dummy data
+        function renderAllProducts() {
+            productList.innerHTML = ''; // Clear any existing content
+            DUMMY_PRODUCTS.forEach(product => {
+                const productCard = renderProduct(product);
+                productList.appendChild(productCard);
+            });
+        }
+
+        // Call the function to render products when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            renderAllProducts();
+        });
+
+
+        // Dark/Light mode toggle
+        const isDarkMode = localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        if (isDarkMode) {
+            html.classList.add('dark');
+            modeIcon.classList.replace('fa-moon', 'fa-sun');
+        } else {
+            html.classList.remove('dark');
+            modeIcon.classList.replace('fa-sun', 'fa-moon');
+        }
+
+        modeToggle.addEventListener('click', () => {
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                modeIcon.classList.replace('fa-sun', 'fa-moon');
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                modeIcon.classList.replace('fa-moon', 'fa-sun');
+            }
+        });
+    </script>
+</body>
+
+>>>>>>> fac8631107e59a51e21ac1af632337be00acefbe
 </html>
